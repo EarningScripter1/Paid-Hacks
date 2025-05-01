@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES Paid Hub | Premium Game Hacks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Philosopher:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --light-blue: #eaf4ff;
+            --dark: #121212;
+            --gold: #D4AF37;
+            --cream: #F5F5DC;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --blue-shadow: 0 4px 20px rgba(26, 115, 232, 0.4);
+            
+            /* Light mode variables */
+            --bg-color: #ffffff;
+            --text-color: #121212;
+            --card-bg: #ffffff;
+            --welcome-bg: #eaf4ff;
+            --toolbar-bg: rgba(255, 255, 255, 0.96);
+            --toolbar-border: rgba(0, 0, 0, 0.05);
+        }
+
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --card-bg: #1e1e1e;
+            --welcome-bg: #1a1a2e;
+            --toolbar-bg: rgba(30, 30, 30, 0.96);
+            --toolbar-border: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Animated Mesh Background */
+        .mesh-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+            animation: float 18s infinite alternate ease-in-out;
+        }
+
+        /* Luxury Header */
+        .toolbar {
+            background: var(--toolbar-bg);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--toolbar-border);
+        }
+
+        .logo {
+            font-family: 'Philosopher', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-color);
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--gold));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover::after {
+            transform: scaleX(1);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .social-link {
+            color: var(--text-color);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+            color: var(--gold);
+        }
+
+        /* Welcome Section */
+        .welcome-box {
+            background: var(--welcome-bg);
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin: 100px 5% 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s 0.3s forwards;
+        }
+
+        .welcome-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            min-width: 60px;
+            text-align: center;
+            animation: bounce 2s infinite;
+        }
+
+        .welcome-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Category Button */
+        .category-btn {
+            display: block;
+            background: linear-gradient(45deg, var(--primary-blue), #0d5bba);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            padding: 14px 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 auto 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: var(--blue-shadow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .category-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 0 5% 80px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .dark-mode .product-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
+        .product-card:nth-child(7) { animation-delay: 0.7s; }
+
+        .product-card:hover {
+            transform: translateY(-10px) rotateX(3deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Image Style */
+        .product-image-container {
+            height: 200px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+
+        /* Product Content */
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 8px;
+            font-family: 'Philosopher', sans-serif;
+        }
+
+        .product-duration {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin-bottom: 15px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+        }
+
+        .product-price::before {
+            content: '₹';
+            margin-right: 4px;
+        }
+
+        /* Buy Button */
+        .buy-btn {
+            background: linear-gradient(45deg, var(--primary-blue), #0d5bba);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            padding: 10px 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: var(--blue-shadow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .buy-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(26, 115, 232, 0.5);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(10px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .toolbar { padding: 0 20px; }
+            .logo { font-size: 1.5rem; }
+            .welcome-box { flex-direction: column; text-align: center; }
+            .products-grid { grid-template-columns: 1fr; padding: 0 20px 60px; }
+            .social-links { gap: 15px; }
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- Animated Mesh Background -->
+    <svg class="mesh-bg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="mesh-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                <path d="M0 0 L80 0 L80 80 L0 80 Z" fill="none" stroke="var(--primary-blue)" stroke-width="0.5" opacity="0.3"/>
+                <circle cx="40" cy="40" r="2" fill="var(--primary-blue)" opacity="0.3"/>
+            </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#mesh-pattern)"/>
+    </svg>
+
+    <!-- Luxury Header -->
+    <div class="toolbar">
+        <div class="logo">ES Paid Hub</div>
+        <div class="social-links">
+            <a href="https://t.me/+f9tI4q7YraZlODI1" class="social-link" target="_blank">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://www.instagram.com/earning.scripter1?igsh=MTR3c3B4c2RmZXE0ZA==" class="social-link" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/@earningscripter1?si=cDJG4oQ_KdPXvG8u" class="social-link" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="welcome-box">
+        <div class="welcome-icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="welcome-text">
+            Welcome to <strong>ES Paid Hub</strong> - These hacks are being given with very high accuracy. And you will get 20x7 support. 
+            choose and buy your favourite game's hack and earn daily ₹1,00,000+ daily🥳.
+        </div>
+    </div>
+
+    <!-- Category Button -->
+    <button class="category-btn">Explore All Hacks</button>
+
+    <!-- Products Grid -->
+    <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="1.png" alt="91club Hack" class="product-image">
+                <div class="product-image-overlay"></div>
+            </div>
+            <div class="product-content">
+                <h3 class="product-name">91club Hack</h3>
+                <p class="product-duration">Lifetime Access | Auto Updates</p>
+                <div class="product-footer">
+                    <div class="product-price">999</div>
+                    <a href="https://telegram.dog/Es1_91club_bot" target="_blank" class="buy-btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="2.png" alt="55club Hack" class="product-image">
+                <div class="product-image-overlay"></div>
+            </div>
+            <div class="product-content">
+                <h3 class="product-name">55club Hack</h3>
+                <p class="product-duration">Lifetime Access | Auto Updates</p>
+                <div class="product-footer">
+                    <div class="product-price">999</div>
+                    <a href="https://telegram.dog/Es1_55club_bot" target="_blank" class="buy-btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="3.png" alt="In999 Hack" class="product-image">
+                <div class="product-image-overlay"></div>
+            </div>
+            <div class="product-content">
+                <h3 class="product-name">In999 Hack</h3>
+                <p class="product-duration">Lifetime Access | Auto Updates</p>
+                <div class="product-footer">
+                    <div class="product-price">999</div>
+                    <a href="https://telegram.dog/Es1_In999_bot" target="_blank" class="buy-btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="4.png" alt="OkWin Hack" class="product-image">
+                <div class="product-image-overlay"></div>
+            </div>
+            <div class="product-content">
+                <h3 class="product-name">OkWin Hack</h3>
+                <p class="product-duration">Lifetime Access | Auto Updates</p>
+                <div class="product-footer">
+                    <div class="product-price">999</div>
+                    <a href="https://telegram.dog/Es1_Okwin_bot" target="_blank" class="buy-btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="5.png" alt="Tiranga Hack" class="product-image">
+                <div class="product-image-overlay"></div>
+            </div>
+            <div class="product-content">
+                <h3 class="product-name">Tiranga Hack</h3>
+                <p class="product-duration">Lifetime Access | Auto Updates</p>
+                <div class="product-footer">
+                    <div class="product-price">999</div>
+                    <a href="https://telegram.dog/Es1_Tiranga_bot" target="_blank" class="buy-btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="6.png" alt="BigMumbai Hack" class="product-image">
+                <div class="product-image-overlay"></div>
+            </div>
+            <div class="product-content">
+                <h3 class="product-name">BigMumbai Hack</h3>
+                <p class="product-duration">Lifetime Access | Auto Updates</p>
+                <div class="product-footer">
+                    <div class="product-price">999</div>
+                    <a href="https://telegram.dog/Es_BigMumbai_bot" target="_blank" class="buy-btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="7.png" alt="BigDaddy Hack" class="product-image">
+                <div class="product-image-overlay"></div>
+            </div>
+            <div class="product-content">
+                <h3 class="product-name">BigDaddy Hack</h3>
+                <p class="product-duration">Lifetime Access | Auto Updates</p>
+                <div class="product-footer">
+                    <div class="product-price">999</div>
+                    <a href="https://telegram.dog/Es1_BigDaddy_bot" target="_blank" class="buy-btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.classList.add(currentTheme);
+            if (currentTheme === 'dark-mode') {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+        
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.product-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
