@@ -16,6 +16,7 @@
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --blue-shadow: 0 4px 20px rgba(26, 115, 232, 0.4);
+            --red: #ff4757;
             
             /* Light mode variables */
             --bg-color: #ffffff;
@@ -224,10 +225,26 @@
         .product-card:nth-child(5) { animation-delay: 0.5s; }
         .product-card:nth-child(6) { animation-delay: 0.6s; }
         .product-card:nth-child(7) { animation-delay: 0.7s; }
+        .product-card:nth-child(8) { animation-delay: 0.8s; }
 
         .product-card:hover {
             transform: translateY(-10px) rotateX(3deg);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Discount Badge */
+        .discount-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--red);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            z-index: 2;
+            box-shadow: 0 2px 10px rgba(255, 71, 87, 0.5);
         }
 
         /* Image Style */
@@ -282,6 +299,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .price-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .original-price {
+            font-size: 1rem;
+            color: var(--text-color);
+            opacity: 0.6;
+            text-decoration: line-through;
+            position: relative;
         }
 
         .product-price {
@@ -380,7 +410,7 @@
             <i class="fas fa-crown"></i>
         </div>
         <div class="welcome-text">
-            Welcome to <strong>ES Paid Hub</strong> - These hacks are being given with very high accuracy. And you will get 20x7 support. 
+            Welcome to <strong>ES Paid Hub</strong> - These hacks are being given with very high accuracy. And you will get 24x7 support. 
             choose and buy your favourite game's hack and earn daily ₹1,00,000+ daily🥳.
         </div>
     </div>
@@ -392,6 +422,7 @@
     <div class="products-grid">
         <!-- Product 1 -->
         <div class="product-card">
+            <div class="discount-badge">50% OFF</div>
             <div class="product-image-container">
                 <img src="1.png" alt="91club Hack" class="product-image">
                 <div class="product-image-overlay"></div>
@@ -400,7 +431,10 @@
                 <h3 class="product-name">91club Hack</h3>
                 <p class="product-duration">Lifetime Access | Auto Updates</p>
                 <div class="product-footer">
-                    <div class="product-price">999</div>
+                    <div class="price-container">
+                        <span class="original-price">₹1999</span>
+                        <div class="product-price">999</div>
+                    </div>
                     <a href="https://telegram.dog/Es1_91club_bot" target="_blank" class="buy-btn">Buy Now</a>
                 </div>
             </div>
@@ -408,6 +442,7 @@
 
         <!-- Product 2 -->
         <div class="product-card">
+            <div class="discount-badge">50% OFF</div>
             <div class="product-image-container">
                 <img src="2.png" alt="55club Hack" class="product-image">
                 <div class="product-image-overlay"></div>
@@ -416,7 +451,10 @@
                 <h3 class="product-name">55club Hack</h3>
                 <p class="product-duration">Lifetime Access | Auto Updates</p>
                 <div class="product-footer">
-                    <div class="product-price">999</div>
+                    <div class="price-container">
+                        <span class="original-price">₹1999</span>
+                        <div class="product-price">999</div>
+                    </div>
                     <a href="https://telegram.dog/Es1_55club_bot" target="_blank" class="buy-btn">Buy Now</a>
                 </div>
             </div>
@@ -424,6 +462,7 @@
 
         <!-- Product 3 -->
         <div class="product-card">
+            <div class="discount-badge">50% OFF</div>
             <div class="product-image-container">
                 <img src="3.png" alt="In999 Hack" class="product-image">
                 <div class="product-image-overlay"></div>
@@ -432,7 +471,10 @@
                 <h3 class="product-name">In999 Hack</h3>
                 <p class="product-duration">Lifetime Access | Auto Updates</p>
                 <div class="product-footer">
-                    <div class="product-price">999</div>
+                    <div class="price-container">
+                        <span class="original-price">₹1999</span>
+                        <div class="product-price">999</div>
+                    </div>
                     <a href="https://telegram.dog/Es1_In999_bot" target="_blank" class="buy-btn">Buy Now</a>
                 </div>
             </div>
@@ -440,6 +482,7 @@
 
         <!-- Product 4 -->
         <div class="product-card">
+            <div class="discount-badge">50% OFF</div>
             <div class="product-image-container">
                 <img src="4.png" alt="OkWin Hack" class="product-image">
                 <div class="product-image-overlay"></div>
@@ -448,7 +491,10 @@
                 <h3 class="product-name">OkWin Hack</h3>
                 <p class="product-duration">Lifetime Access | Auto Updates</p>
                 <div class="product-footer">
-                    <div class="product-price">999</div>
+                    <div class="price-container">
+                        <span class="original-price">₹1999</span>
+                        <div class="product-price">999</div>
+                    </div>
                     <a href="https://telegram.dog/Es1_Okwin_bot" target="_blank" class="buy-btn">Buy Now</a>
                 </div>
             </div>
@@ -456,6 +502,7 @@
 
         <!-- Product 5 -->
         <div class="product-card">
+            <div class="discount-badge">50% OFF</div>
             <div class="product-image-container">
                 <img src="5.png" alt="Tiranga Hack" class="product-image">
                 <div class="product-image-overlay"></div>
@@ -464,7 +511,10 @@
                 <h3 class="product-name">Tiranga Hack</h3>
                 <p class="product-duration">Lifetime Access | Auto Updates</p>
                 <div class="product-footer">
-                    <div class="product-price">999</div>
+                    <div class="price-container">
+                        <span class="original-price">₹1999</span>
+                        <div class="product-price">999</div>
+                    </div>
                     <a href="https://telegram.dog/Es1_Tiranga_bot" target="_blank" class="buy-btn">Buy Now</a>
                 </div>
             </div>
@@ -472,6 +522,7 @@
 
         <!-- Product 6 -->
         <div class="product-card">
+            <div class="discount-badge">50% OFF</div>
             <div class="product-image-container">
                 <img src="6.png" alt="BigMumbai Hack" class="product-image">
                 <div class="product-image-overlay"></div>
@@ -480,7 +531,10 @@
                 <h3 class="product-name">BigMumbai Hack</h3>
                 <p class="product-duration">Lifetime Access | Auto Updates</p>
                 <div class="product-footer">
-                    <div class="product-price">999</div>
+                    <div class="price-container">
+                        <span class="original-price">₹1999</span>
+                        <div class="product-price">999</div>
+                    </div>
                     <a href="https://telegram.dog/Es_BigMumbai_bot" target="_blank" class="buy-btn">Buy Now</a>
                 </div>
             </div>
@@ -488,6 +542,7 @@
 
         <!-- Product 7 -->
         <div class="product-card">
+            <div class="discount-badge">50% OFF</div>
             <div class="product-image-container">
                 <img src="7.png" alt="BigDaddy Hack" class="product-image">
                 <div class="product-image-overlay"></div>
@@ -496,8 +551,31 @@
                 <h3 class="product-name">BigDaddy Hack</h3>
                 <p class="product-duration">Lifetime Access | Auto Updates</p>
                 <div class="product-footer">
-                    <div class="product-price">999</div>
+                    <div class="price-container">
+                        <span class="original-price">₹1999</span>
+                        <div class="product-price">999</div>
+                    </div>
                     <a href="https://telegram.dog/Es1_BigDaddy_bot" target="_blank" class="buy-btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product 8 - Daman Hack -->
+        <div class="product-card">
+            <div class="discount-badge">50% OFF</div>
+            <div class="product-image-container">
+                <img src="8.png" alt="Daman Hack" class="product-image">
+                <div class="product-image-overlay"></div>
+            </div>
+            <div class="product-content">
+                <h3 class="product-name">Daman Hack</h3>
+                <p class="product-duration">Lifetime Access | Auto Updates</p>
+                <div class="product-footer">
+                    <div class="price-container">
+                        <span class="original-price">₹1999</span>
+                        <div class="product-price">999</div>
+                    </div>
+                    <a href="https://telegram.dog/Es1_Daman_Bot" target="_blank" class="buy-btn">Buy Now</a>
                 </div>
             </div>
         </div>
